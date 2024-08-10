@@ -3,6 +3,18 @@
   "plugins": ["stylelint-prettier"],
   "rules": {
     "prettier/prettier": true,
-    "import-notation": null
+    "import-notation": null,
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": ["view-transition-name"]
+      }
+    ],
+    "selector-pseudo-element-no-unknown": [
+      true,
+      {
+        "ignorePseudoElements": ["view-transition-old", "view-transition-new"]
+      }
+    ]
   }
 }
