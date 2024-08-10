@@ -1,4 +1,14 @@
 import { useState } from "react";
+import OpenAI from "openai";
+
+import systemPrompt from "./systemPrompt";
+import { openAiAPIKey, openAiOrganization } from "./config";
+
+const openAi = new OpenAI({
+  dangerouslyAllowBrowser: true,
+  apiKey: openAiAPIKey,
+  organization: openAiOrganization,
+});
 
 const useConversation = ({
   handleAppStateChange,
@@ -18,6 +28,14 @@ const useConversation = ({
     message.text = text;
     message.voice = voice;
     window.speechSynthesis.speak(message);
+    let r = setInterval(() => {
+      if (!speechSynthesis.speaking) {
+        clearInterval(r);
+      } else {
+        speechSynthesis.pause();
+        speechSynthesis.resume();
+      }
+    }, 1000);
     message.onend = handleDone;
   };
 
@@ -39,11 +57,18 @@ const useConversation = ({
       handleAppStateChange("idle");
     } else {
       handleAppStateChange("thinking");
-      console.log(text);
-      // Call openAI API here
-      setTimeout(() => {
-        handleResponse("Sure! Elephants are the largest land animals.");
-      }, 3000);
+      openAi.chat.completions
+        .create({
+          messages: [
+            { role: "system", content: systemPrompt },
+            { role: "user", content: text.trim() },
+          ],
+          model: "gpt-4o-mini",
+        })
+        .then((completion) => {
+          console.log(completion);
+          handleResponse(completion.choices[0].message.content);
+        });
     }
   };
 
