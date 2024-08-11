@@ -36,33 +36,37 @@
   position: absolute;
   width: 10%;
   height: 10%;
-  background-color: white;
   border-radius: 100svmin;
   opacity: 1;
 }
 
 .interface .dot-1 {
+  background-color: #8ac926;
   view-transition-name: dot-1;
 }
 
 .interface .dot-2 {
+  background-color: #ffca3a;
   view-transition-name: dot-2;
 }
 
 .interface .dot-3 {
+  background-color: #ff595e;
   view-transition-name: dot-3;
 }
 
 .interface .dot-4 {
+  background-color: #1982c4;
   view-transition-name: dot-4;
 }
 
 .interface .dot-5 {
+  background-color: #6a4c93;
   view-transition-name: dot-5;
 }
 
 .idle .dot-1 {
-  animation: idle-dot-pulse 5s ease-in-out infinite;
+  animation: idle-dot-pulse 25s ease-in-out infinite;
 }
 
 .idle .dot-2,
@@ -76,16 +80,67 @@
 
 @keyframes idle-dot-pulse {
   0% {
+    background-color: #ff595e;
+    transform: scale(2);
+    opacity: 1;
+  }
+
+  10% {
+    background-color: #ffca3a;
+    transform: scale(2.5);
+    opacity: 0.8;
+  }
+
+  20% {
+    background-color: #ffca3a;
+    transform: scale(2);
+    opacity: 1;
+  }
+
+  30% {
+    background-color: #8ac926;
+    transform: scale(2.5);
+    opacity: 0.8;
+  }
+
+  40% {
+    background-color: #8ac926;
     transform: scale(2);
     opacity: 1;
   }
 
   50% {
+    background-color: #1982c4;
+    transform: scale(2.5);
+    opacity: 0.8;
+  }
+
+  60% {
+    background-color: #1982c4;
+    transform: scale(2);
+    opacity: 1;
+  }
+
+  70% {
+    background-color: #6a4c93;
+    transform: scale(2.5);
+    opacity: 0.8;
+  }
+
+  80% {
+    background-color: #6a4c93;
+    transform: scale(2);
+    opacity: 1;
+  }
+
+  90% {
+    background-color: #ff595e;
     transform: scale(2.5);
     opacity: 0.8;
   }
 
   100% {
+    background-color: #ff595e;
     transform: scale(2);
     opacity: 1;
   }
@@ -93,7 +148,7 @@
 
 .listening .dot-1 {
   animation: listening-dot 5s linear infinite;
-  animation-delay: 0;
+  animation-delay: -2s;
 }
 
 .listening .dot-2 {
@@ -103,7 +158,7 @@
 
 .listening .dot-3 {
   animation: listening-dot 5s linear infinite;
-  animation-delay: -2s;
+  animation-delay: 0s;
 }
 
 .listening .dot-4 {
