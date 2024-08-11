@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/hello-computer/static/css/main.7963ee51.css",
+    "main.css": "/hello-computer/static/css/main.0c1a092f.css",
     "main.js": "/hello-computer/static/js/main.61cba3cf.js",
     "static/js/453.33a692ba.chunk.js": "/hello-computer/static/js/453.33a692ba.chunk.js",
     "index.html": "/hello-computer/index.html",
-    "main.7963ee51.css.map": "/hello-computer/static/css/main.7963ee51.css.map",
+    "main.0c1a092f.css.map": "/hello-computer/static/css/main.0c1a092f.css.map",
     "main.61cba3cf.js.map": "/hello-computer/static/js/main.61cba3cf.js.map",
     "453.33a692ba.chunk.js.map": "/hello-computer/static/js/453.33a692ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7963ee51.css",
+    "static/css/main.0c1a092f.css",
     "static/js/main.61cba3cf.js"
   ]
 }
